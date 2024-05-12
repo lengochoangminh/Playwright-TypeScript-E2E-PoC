@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe("Home - IoT Dashboard", () => {
 
-    test("@Low -Verify to toggle Light is ON/OFF @bug", async ({ page }) => {
+    test("@Medium -Verify to toggle Light is ON/OFF @bug", async ({ page }) => {
         // Simulate the test is failed and add the annotation to describe the defect found
         test.info().annotations.push(({
             type: "bug",
