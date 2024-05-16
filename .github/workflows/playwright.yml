@@ -1,0 +1,29 @@
+name: Playwright Tests
+on:
+  pull_request:
+    branches: [main, master]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci --force
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps --force
+      - name: Install Angular web
+        run: npm start &
+      - name: Sleep for 60 seconds
+        run: sleep 60s
+        shell: bash
+      - name: Run Playwright tests
+        run: env=dev npx playwright test --grep @Low
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

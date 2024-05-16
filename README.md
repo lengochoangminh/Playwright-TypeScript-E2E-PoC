@@ -21,4 +21,7 @@
 - Data management. Save the configurations, secrect token in .env files
 - Added Annotations to elaborate on the test issues found. Simulated one test failed & add annotation to elaborate on the defect found
 - Installed the Allure Report
-- Visual Comparison Testing. Capture the snapshot called the base image. The subsequent run compares the base image if there is no difference test is passed, and if there is a difference, the test is considered as failed.
+- Visual Comparison Testing.
+  - Capture the snapshot called the base image. The subsequent run compares the base image if there is no difference test is passed, and if there is a difference, the test is considered as failed.
+  - Notice that the 1st run will be failed when there is no base image created.
+- GitHub Actions. Run the tests automatically when opening a new pull request to the main branch.
