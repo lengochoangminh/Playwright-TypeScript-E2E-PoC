@@ -3,8 +3,8 @@
 ## Setup
 
 - Clone the repo & Install Playwright + dependencies needed: `npm install --force`
-- Launch IoT Dashboard runs locally: `npm start `
-- Access the site at http://localhost:4200/
+- Run the front-end web locally- IoT Dashboard: `npm start `
+- Open the site at http://localhost:4200/
 
 ## Execute Tests
 
