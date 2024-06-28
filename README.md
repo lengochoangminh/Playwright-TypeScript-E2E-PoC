@@ -22,10 +22,10 @@
 
 - Data management. Save the configurations, and secret token in the .env files
 
-- Added Annotations to elaborate on the test issues found. Simulated one test failed & added annotation to elaborate on the defect found
+- Playwright Test Report Annotations. For example "Bug/BugId" for the failure
   <img width="800" alt="Screenshot 2024-06-01 at 09 46 18" src="https://github.com/lengochoangminh/Playwright-TypeScript-E2E-PoC/assets/29770042/e3b7904c-f4ab-4ecf-9d55-aa45293621bd">
 
-- Installed the Allure Report
+- Hands-on with Allure Report.
   <img width="900" alt="Screenshot 2024-06-01 at 09 35 01" src="https://github.com/lengochoangminh/Playwright-TypeScript-E2E-PoC/assets/29770042/4b332b81-b734-44ed-8572-cd1863b7cabc">
 
 - Visual Comparison Testing.
@@ -41,7 +41,7 @@
   <img width="600" alt="Screenshot 2024-06-17 at 08 07 50" src="https://github.com/lengochoangminh/Playwright-TypeScript-E2E-PoC/assets/29770042/213a6ce2-087a-4093-8c1d-04eeb29d9973">
   <img width="700" alt="Screenshot 2024-06-17 at 08 35 22" src="https://github.com/lengochoangminh/Playwright-TypeScript-E2E-PoC/assets/29770042/e6b75233-6941-41a8-9350-e70b6727659f">
 
-- Dockerization
+- Dockerize Playwright Tests
   - Build your docker image from Docker File: docker build -t playwright-tests .
   - Run a specific test with Dockerfile: `docker run -e TESTS=tests/formsDatepicker.spec.ts playwright-tests`
   - Run all tests with Docker Compose: `docker compose up`
