@@ -37,8 +37,11 @@
 - GitHub Actions. Run the tests automatically when opening a new pull request to the main branch.
   <img width="800" alt="Screenshot 2024-06-16 at 11 28 02" src="https://github.com/lengochoangminh/Playwright-TypeScript-E2E-PoC/assets/29770042/459d3cac-6bed-4807-b46c-ec71378e5e9d">
 
-- Installed Prettier and ESLint to help solve common errors and consistency your code base   
+- Installed Prettier and ESLint to help solve common errors and consistency your code base  
   <img width="600" alt="Screenshot 2024-06-17 at 08 07 50" src="https://github.com/lengochoangminh/Playwright-TypeScript-E2E-PoC/assets/29770042/213a6ce2-087a-4093-8c1d-04eeb29d9973">
   <img width="700" alt="Screenshot 2024-06-17 at 08 35 22" src="https://github.com/lengochoangminh/Playwright-TypeScript-E2E-PoC/assets/29770042/e6b75233-6941-41a8-9350-e70b6727659f">
 
-
+- Dockerize Playwright Tests
+  - Build your docker image from Docker File: docker build -t playwright-tests .
+  - Run a specific test with Dockerfile: `docker run -e TESTS=tests/formsDatepicker.spec.ts playwright-tests`
+  - Run all tests with Docker Compose: `docker compose up`
