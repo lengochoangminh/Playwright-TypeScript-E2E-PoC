@@ -46,3 +46,6 @@ Thumbs.db
 /playwright/.cache/
 
 allure-results
+
+/tests/charts-ECharts.spec.ts-snapshots/
+.vs
