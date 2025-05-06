@@ -6,7 +6,9 @@ test.describe("Tables and Data - Smart Table: Interacting with Tables and Rows",
     let tableAndData;
 
     test.beforeEach(async ({ page }) => {
+
         tableAndData = new TableAndData(page);
+
         await allure.step(
             "Navigate to Tables and Data > Smart Table form",
             async () => {
@@ -16,10 +18,14 @@ test.describe("Tables and Data - Smart Table: Interacting with Tables and Rows",
         );
     });
 
-    test("@Medium - Verify to update the user's age based on their email", async ({ page }) => {
+    test("@Medium - Verify to update the user's age", async ({ page }) => {
 
-        await allure.step("Verify to update the user's age based on their email", async () => {
+        await allure.step("Based on their email", async () => {
             await tableAndData.updateUserAgeByEmail("twitter@outlook.com");
+        });
+
+        await allure.step("For the 4th table row", async () => {
+            await tableAndData.updateUserAgeFor4thRow();
         });
 
     });
@@ -42,9 +48,13 @@ test.describe("Tables and Data - Smart Table: Interacting with Tables and Rows",
 
     });
 
-    test("@Medium - Print out the table values", async ({ page }) => {
+    test("@Medium - Playground with the Table", async () => {
 
-        await allure.step("Verify to update the user's age based on their email", async () => {
+        await allure.step("Verify to the table rows number ", async () => {
+            await tableAndData.getTableRows();
+        });
+
+        await allure.step("Print the table values to CSV", async () => {
             await tableAndData.printTableValuesToCSV();
         });
 

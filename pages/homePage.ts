@@ -9,16 +9,19 @@ export class HomePage extends BasePage {
     readonly ddlThemeSelection: Locator;
     readonly headerTheme: Locator;
 
+    readonly pageBody: Locator;
+
     constructor(page: Page) {
 
         super(page);
 
+        this.pageBody = this.page.locator("body");
         this.tempBox = this.page.locator('[tabtitle="Temperature"] ngx-temperature-dragger');
         this.txtLight = this.page.locator("ngx-status-card").getByText("Light");
         this.txtLightStatus = this.txtLight.locator('..').locator('div.status.paragraph-2');              // CSS
         //OR USE XPATH  =>    this.txtLightStatus = this.txtLight.locator('xpath=../div[@class="status paragraph-2"]');
         this.ddlThemeSelection = this.page.locator("ngx-header nb-select");
-        this.headerTheme = this.page.locator("nb-layout-header");
+        this.headerTheme = this.page.locator("nb-layout-header");        
     }
 
     async clickOnLight() {

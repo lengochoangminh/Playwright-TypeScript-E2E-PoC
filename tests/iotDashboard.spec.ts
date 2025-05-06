@@ -52,14 +52,13 @@ test.describe("Home - IoT Dashboard", () => {
         });
 
         await allure.step(
-            "Verify the website is changed to the selected theme correctly",
-            async () => {
-                await expect(homePage.headerTheme).toHaveCSS(
-                    "background-color",
-                    "rgb(50, 50, 89)"
-                );
-            }
-        );
+            "Verify the website is changed to the selected theme correctly", async () => {
+                // === Option 1 - ToHaveCSS ===
+                //await expect(homePage.pageBody).toHaveCSS("background-color", "rgb(50, 50, 89)");
+
+                // === Option 2 - ToHaveClass + Using Regrex /.*pharse.*/ ===
+                await expect(homePage.pageBody).toHaveClass(/.*nb-theme-cosmic.*/);
+            });
     });
 
 });
