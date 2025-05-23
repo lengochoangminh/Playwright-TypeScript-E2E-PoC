@@ -56,4 +56,23 @@ test.describe('Login Page', () => {
 
     })
 
+    test('@Low Handling new pages', async ({ context }) => {
+        await allure.step("Click on GitHub icon", async () => {
+
+            await loginPage.lnkGitHub.click();
+
+            // Handling new pages
+            const pagePromise = context.waitForEvent('page');
+            await loginPage.lnkGitHub.click();
+
+            const newPage = await pagePromise;
+            await expect(newPage).toHaveURL(/.*github.com/);
+
+            await newPage.close();
+
+            await loginPage.lnkGitHub.click();
+                                  
+        });
+    })
+
 })

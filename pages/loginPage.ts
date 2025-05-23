@@ -7,6 +7,8 @@ export class LoginPage extends BasePage {
     readonly cbRememberMe: Locator;
     readonly btnLogin: Locator;
     readonly txtErrorMessage: Locator;
+    readonly lnkGitHub: Locator;
+
 
     constructor(page: Page) {
 
@@ -17,6 +19,8 @@ export class LoginPage extends BasePage {
         this.cbRememberMe = this.page.getByText('Remember me');
         this.btnLogin = this.page.getByRole('button', { name: 'Log In' });
         this.txtErrorMessage = this.page.getByLabel('Login');
+
+        this.lnkGitHub = page.getByLabel('Social sign in').getByRole('link').first();
     }
 
     async navigateToLoginPage() {
